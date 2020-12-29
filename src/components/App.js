@@ -3,12 +3,13 @@ import SearchBar from "./SearchBar";
 import youtube from "../apis/youtube";
 import VideoList from "./VideoList";
 import VideoDetail from "./VideoDetail";
+import logo from "../images/youtube.svg"
 
 class App extends React.Component {
   state = { videos: [], selectedVideo: null };
 
   componentDidMount() {
-    this.onTermSubmit('Aurora')
+    this.onTermSubmit('Aurora Live')
   }
 
   onTermSubmit = async (term) => {
@@ -31,6 +32,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="ui container">
+        <img alt="logo" src={logo} style={{width:250, marginTop:20}}></img>
         <SearchBar onFormSubmit={this.onTermSubmit} />
         <div className="ui grid">
           <div className="ui row">
